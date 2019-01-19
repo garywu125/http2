@@ -32,9 +32,9 @@
  app="$1"
  tag="$2"
  
- window_build="../release/$app/$tag/${app}_windows_amd64" 
- linux_build="../release/$app/$tag/${app}_linux_amd64"  
- darwin_build="../release/$app/$tag/${app}_darwin_amd64"  
+ window_build="./release/$app/$tag/${app}_windows_amd64" 
+ linux_build="./release/$app/$tag/${app}_linux_amd64"  
+ darwin_build="./release/$app/$tag/${app}_darwin_amd64"  
  
  # os-host-app release , Inject build-time variables 
 export GIT_COMMIT=$(git rev-list -1 HEAD)  &&  GOOS=windows GOARCH=amd64 go build -ldflags "-X main.GitCommit=$GIT_COMMIT"  -o $window_build
